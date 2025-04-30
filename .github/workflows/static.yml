@@ -41,7 +41,18 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: npm run build
+        run: |
+          # Set base path for GitHub Pages (repository name)
+          export REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)
+          # For Vite projects
+          if [ -f "vite.config.js" ] || [ -f "vite.config.ts" ]; then
+            echo "Building Vite project with base path: /$REPO_NAME/"
+            npm run build -- --base=/$REPO_NAME/
+          else
+            # For other build tools, set PUBLIC_URL or similar environment variable
+            export PUBLIC_URL=/$REPO_NAME/
+            npm run build
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
