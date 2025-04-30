@@ -683,7 +683,7 @@
           </p>
           <a
             href="#login"
-            class="bg-white text-primary font-medium py-3 px-8 rounded-lg hover:bg-gray-100 transition"
+            class="text-primary font-medium py-3 px-8 rounded-lg hover:bg-gray-100/10 transition"
           >
             Sign Up Now
           </a>
