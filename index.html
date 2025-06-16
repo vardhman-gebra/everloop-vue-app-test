@@ -19,21 +19,21 @@
 
  <!-- Everloop SDK Loader -->
 <script>
-const style = document.createElement("style");
-style.innerHTML = "body { opacity: 0 !important; }";
-const cfhide = () => document.head.appendChild(style);
-const cfshow = () => style.remove();
-cfhide();
-setTimeout(cfshow, 2000);
-document.addEventListener("everloop:show", cfshow);
-window.EFQ = window.EFQ || [];
-window.EFQ.push({
-  config: {
-    campaignId: "ff8c132d-f364-469a-a2f4-4e091ea169b3",
-  },
-});
+    // Coframe antiflicker: hide body until coframe:show event or 2s timeout
+    const style = document.createElement('style');
+    style.innerHTML = 'body { opacity: 0 !important; }';
+    const cfhide = () => document.head.appendChild(style);
+    const cfshow = () => style.remove();
+    cfhide(); setTimeout(cfshow, 2000);
+    document.addEventListener('coframe:show', cfshow);
+
+    // Coframe queue setup:
+    window.CFQ = window.CFQ || [];
+    window.CFQ.push({config: {
+        projectId: "684fd7e8d424ba3941df89da",
+    }});
 </script>
-<script async src="https://cdn.gebra.ai/everloop.min.js?campaign_id=ff8c132d-f364-469a-a2f4-4e091ea169b3"></script>
+<script async src="https://cdn.coframe.com/cf.min.js?project_id=684fd7e8d424ba3941df89da"></script>
     
   </head>
   <body class="bg-neutral-50">
