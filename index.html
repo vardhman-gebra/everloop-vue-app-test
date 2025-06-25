@@ -19,22 +19,21 @@
 
  <!-- Everloop SDK Loader -->
 <script>
-    // Coframe antiflicker: hide body until coframe:show event or 2s timeout
-    const style = document.createElement('style');
-    style.innerHTML = 'body { opacity: 0 !important; }';
-    const cfhide = () => document.head.appendChild(style);
-    const cfshow = () => style.remove();
-    cfhide(); setTimeout(cfshow, 2000);
-    document.addEventListener('coframe:show', cfshow);
-
-    // Coframe queue setup:
-    window.CFQ = window.CFQ || [];
-    window.CFQ.push({config: {
-        projectId: "684fd7e8d424ba3941df89da",
-    }});
+const style = document.createElement("style");
+style.innerHTML = "body { opacity: 0 !important; }";
+const cfhide = () => document.head.appendChild(style);
+const cfshow = () => style.remove();
+cfhide();
+setTimeout(cfshow, 2000);
+document.addEventListener("everloop:show", cfshow);
+window.EFQ = window.EFQ || [];
+window.EFQ.push({
+  config: {
+    projectId: "ynD4E5GoZiCGIio2",
+  },
+});
 </script>
-<script async src="https://cdn.coframe.com/cf.min.js?project_id=684fd7e8d424ba3941df89da"></script>
-    
+<script async src="https://cdn-prod.geteverloop.com/everloop.min.js?project_id=ynD4E5GoZiCGIio2"></script>
   </head>
   <body class="bg-neutral-50">
     <div id="app"></div>
