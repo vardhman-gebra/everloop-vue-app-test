@@ -712,6 +712,12 @@ const handleLogin = () => {
   // Handle login logic here
   console.log("Login attempt with:", email.value);
   // You would normally call an authentication service here
+  if ((window as any).gtag) {
+    (window as any).gtag("event", "login", {
+      method: "email",
+      email: email.value,
+    });
+  }
 };
 </script>
 
