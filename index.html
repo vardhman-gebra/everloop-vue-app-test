@@ -16,17 +16,6 @@
       rel="stylesheet"
     />
  <!-- Everloop SDK Loader -->
-<link rel="preconnect" href="https://cdn-prod.geteverloop.com">
-<link rel="dns-prefetch" href="https://cdn-prod.geteverloop.com">
-<script>
-  window.dataLayer = window.dataLayer || [];
-  if (!window.gtag) {
-    window.gtag = function () {
-      dataLayer.push(arguments);
-    };
-  }
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CMBXVNR0T6"></script>
 <script>
 const style = document.createElement("style");
 style.innerHTML = "body { opacity: 0 !important; }";
@@ -46,9 +35,16 @@ window.EFQ.push({
 <!-- END Everloop SDK Loader -->
 <!-- Google tag (gtag.js) -->
 <script>
+  window.dataLayer = window.dataLayer || [];
+  if (!window.gtag) {
+    window.gtag = function () {
+      dataLayer.push(arguments);
+    };
+  }
   gtag('js', new Date());
   gtag('config', 'G-CMBXVNR0T6',{ 'debug_mode':true });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CMBXVNR0T6"></script>
 <!-- End Google Tag Manager -->  
 </head>
   <body class="bg-neutral-50">
