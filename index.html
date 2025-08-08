@@ -51,11 +51,11 @@
     )
       .then(() => window.everloop.init())
       .then(() => {
-        gtag("set", window._everloop);
-        console.log("Everloop initialized", window._everloop);
         gtag("js", new Date());
-        gtag("config", "G-CMBXVNR0T6");
-        console.log("GTag Configure");
+        gtag("config", "G-CMBXVNR0T6", {
+          ...window._everloop,
+        });
+        gtag("set", "user_properties", window._everloop);
       })
       .catch((e) => {
         console.error("Everloop init failed", e);
