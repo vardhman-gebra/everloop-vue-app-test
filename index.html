@@ -17,35 +17,48 @@
     />
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
 </script>
-<!-- Google Tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CMBXVNR0T6"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-CMBXVNR0T6"
+></script>
 <script>
   const style = document.createElement("style");
-  style.innerHTML = "body { opacity: 0 !important; }";
-  const cfhide = () => document.head.appendChild(style);
-  const cfshow = () => style.remove();
+  style.innerHTML = "body{opacity:0!important;}";
+  const cfhide = () => document.head.appendChild(style),
+    cfshow = () => style.remove();
   cfhide();
-  setTimeout(cfshow, 2000);
+  setTimeout(cfshow, 2e3);
   document.addEventListener("everloop:show", cfshow);
   window.EFQ = window.EFQ || [];
-  window.EFQ.push({
-    config: { projectId: "cA-yyPqI3VpU31EO" }
-  });
+  window.EFQ.push({ config: { projectId: "cA-yyPqI3VpU31EO" } });
+  (function () {
+    function ls(u) {
+      return new Promise((r, j) => {
+        let s = document.createElement("script");
+        s.src = u;
+        s.async = 1;
+        s.onload = r;
+        s.onerror = j;
+        document.head.appendChild(s);
+      });
+    }
+    ls(
+      "https://cdn-prod.geteverloop.com/everloop_dev.min.js?project_id=cA-yyPqI3VpU31EO"
+    )
+      .then(() => window.everloop.init())
+      .then(() => {
+        gtag("js", new Date());
+        gtag("config", "G-CMBXVNR0T6");
+      })
+      .catch((e) => {
+        console.error("Everloop init failed", e);
+      });
+  })();
 </script>
-<!-- Everloop SDK Loader -->
-<script>
-(function(){
-  function ls(u){return new Promise((r,j)=>{let s=document.createElement('script');s.src=u;s.async=1;s.onload=r;s.onerror=j;document.head.appendChild(s);});}
-  ls("https://cdn-prod.geteverloop.com/everloop_dev.min.js?project_id=cA-yyPqI3VpU31EO")
-    .then(()=>window.everloop.init().then(()=>{
-      gtag('js',new Date());
-      gtag('config','G-CMBXVNR0T6');
-    }));
-})();
-</script>
-<!-- Everloop SDK Loader -->
 </head>
   <body class="bg-neutral-50">
     <!-- Google Tag Manager (noscript) -->
