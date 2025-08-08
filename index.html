@@ -51,6 +51,7 @@
     )
       .then(() => window.everloop.init())
       .then(() => {
+        gtag("set", window._everloop);
         gtag("js", new Date());
         gtag("config", "G-CMBXVNR0T6");
       })
