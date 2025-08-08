@@ -39,11 +39,10 @@
 (function(){
   function ls(u){return new Promise((r,j)=>{let s=document.createElement('script');s.src=u;s.async=1;s.onload=r;s.onerror=j;document.head.appendChild(s);});}
   ls("https://cdn-prod.geteverloop.com/everloop_dev.min.js?project_id=cA-yyPqI3VpU31EO")
-    .then(()=>window.everloop.init())
-    .then(()=>{
+    .then(()=>window.everloop.init().then(()=>{
       gtag('js',new Date());
       gtag('config','G-CMBXVNR0T6');
-    });
+    }));
 })();
 </script>
 <!-- Everloop SDK Loader -->
