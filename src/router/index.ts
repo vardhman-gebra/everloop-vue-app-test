@@ -5,8 +5,13 @@ import ServicesPage from "../components/ServicesPage.vue";
 import ContactPage from "../components/ContactPage.vue";
 import DashboardPage from "../components/DashboardPage.vue";
 
+// Dynamically determine base path for GitHub Pages compatibility
+const getBasePath = (): string => {
+  return import.meta.env.BASE_URL ?? "/";
+};
+
 const router = createRouter({
-  history: createWebHistory("/"),
+  history: createWebHistory(getBasePath()),
   routes: [
     {
       path: "/",
