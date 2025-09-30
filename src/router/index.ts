@@ -56,7 +56,7 @@ const router = createRouter({
       redirect: "/",
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_to, _from, savedPosition) {
     // Always scroll to top when navigating to a new route
     if (savedPosition) {
       return savedPosition;
