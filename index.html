@@ -15,23 +15,25 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Everloop SDK Loader -->
-    <script>
-    const style = document.createElement("style");
-    style.innerHTML = "body { opacity: 0 !important; }";
-    const cfhide = () => document.head.appendChild(style);
-    const cfshow = () => style.remove();
-    cfhide();
-    setTimeout(cfshow, 2000);
-    document.addEventListener("everloop:show", cfshow);
-    window.EFQ = window.EFQ || [];
-    window.EFQ.push({
-      config: {
-        projectId: "bAnnKM16ama1_nH5",
-      },
-    });
+    <!-- Everloop SDK Loader --> 
+    <link
+        id="everloop-sdk-preload"
+        rel="preload"
+        href="https://cdn-dev.geteverloop.com/everloop.min.js?project_id=bAnnKM16ama1_nH5"
+        as="script"
+    />
+    <script id="everloop-sdk-loader">
+        (function (w, d, s, p) {
+        var st = d.createElement(s);st.innerHTML = "body{opacity:0!important;}";var h = function () {d.head.appendChild(st);},sh = function () {st.remove();};h();setTimeout(sh, 2e3);d.addEventListener("everloop:show", sh);
+        w.EFQ = w.EFQ || [];
+        w.EFQ.push({ config: { projectId: p, debug: !0 } });
+        var j = d.createElement("script");
+        j.src = "https://cdn-dev.geteverloop.com/everloop.min.js?project_id=" + p;
+        j.async = 1;
+        d.head.appendChild(j);
+        })(window, document, "style", "bAnnKM16ama1_nH5");
     </script>
-    <script async src="https://cdn-dev.geteverloop.com/everloop-dev.min.js?project_id=bAnnKM16ama1_nH5"></script>
+<!-- Ends Everloop SDK Loader -->
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
